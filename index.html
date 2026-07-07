@@ -252,15 +252,12 @@
   }
 
   function buildBody(e,term){
-    var jump='<div class="jump">';
     var body='';
     for(var i=0;i<e.sections.length;i++){
-      var s=e.sections[i], role=s.r||'info', sid='s'+e.id+'-'+i;
-      jump+='<span class="jpill j-'+role+'" data-go="'+sid+'">'+esc(s.h)+'</span>';
+      var s=e.sections[i], sid='s'+e.id+'-'+i;
       body+=renderSection(s,term,sid);
     }
-    jump+='</div>';
-    return '<div class="body">'+jump+body+'</div>';
+    return '<div class="body">'+body+'</div>';
   }
 
   function entryNode(e,term){
